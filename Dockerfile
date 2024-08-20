@@ -11,5 +11,8 @@ RUN npm install
 # Copy semua file ke working directory
 COPY . .
 
+# Expose port 3000
+EXPOSE 3000
+
 # Jalankan aplikasi
 CMD ["npm", "start"]

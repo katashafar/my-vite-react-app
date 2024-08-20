@@ -38,4 +38,7 @@ jobs:
         tags: ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
 
     - name: Deploy to Docker Desktop
-      run: docker run -d -p 80:80 ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
+      run: docker run -d -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
+
+    - name: Test application is running
+      run: curl http://localhost:3000
