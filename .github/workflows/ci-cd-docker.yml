@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
     - name: Checkout code
@@ -30,9 +30,6 @@ jobs:
 
     - name: Run Docker container
       run: docker run -d -p 16000:3000 --name myapp-container myapp:${{ github.sha }}
-
-    # - name: Test application is running
-    #   run: curl --retry 5 --retry-delay 5 --fail http://localhost:3000
 
     - name: Stop and remove Docker container
       run: |
