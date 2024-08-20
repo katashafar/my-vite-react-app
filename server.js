@@ -15,6 +15,7 @@ app.get("*", (req, res) => {
 });
 
 // server.js
+// eslint-disable-next-line no-undef
 const port = process.env.PORT || 16000;
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
