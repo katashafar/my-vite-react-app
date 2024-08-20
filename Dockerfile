@@ -1,26 +1,15 @@
-# Gunakan base image Node.js yang ringan
-FROM node:lts-alpine
+# Gunakan image base
+FROM node:14
 
-# Set working directory di dalam container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json dan package-lock.json ke dalam container
+# Copy file package.json dan install dependencies
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy semua file dan folder ke dalam container
+# Copy semua file ke working directory
 COPY . .
 
-# Build aplikasi untuk produksi
-RUN npm run build
-
-# Gunakan server HTTP sederhana untuk menyajikan aplikasi
-RUN npm install -g serve
-
-# Expose port 5000
-EXPOSE 5000
-
-# Command untuk menjalankan aplikasi
-CMD ["serve", "-s", "dist", "-l", "5000"]
+# Jalankan aplikasi
+CMD ["npm", "start"]
