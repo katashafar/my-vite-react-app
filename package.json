@@ -8,12 +8,12 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node index.js"
+    "start": "node index.html"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-     "express": "^4.17.1"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
